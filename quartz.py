@@ -1,17 +1,15 @@
 class Quartz:
-    name = ""
-    earth = 0
-    water = 0
-    fire = 0
-    wind = 0
-    time = 0
-    space = 0
-    mirage = 0
-    
-
-    def __init__(self, name, earth, water, fire, wind, time, space, mirage):
-        self.name, self.earth, self.water, self.fire, self.wind, self.time, self.space, 
-        self.mirage = name, earth, water, fire, wind, time, space, mirage
+    def __init__(self=None, name=None, earth=None, 
+                 water=None, fire=None, wind=None, 
+                 time=None, space=None, mirage=None):
+        self.name = name
+        self.earth = earth
+        self.water = water
+        self.fire = fire
+        self.wind = wind
+        self.time = time
+        self.space = space
+        self.mirage = mirage
     
     def get_sepeth(self, element):
         if element == 'earth':
