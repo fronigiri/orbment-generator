@@ -9,11 +9,11 @@ class TestQuartz(unittest.TestCase):
         self.assertEqual(cloak.fire, 2)
         self.assertEqual(cloak.name, "Cloak")
     
-    def test_get_sepeth(self):
+    def test_get_sepith(self):
         ep_3 = Quartz("EP 3", time=2, space=2, mirage=5)
-        value = ep_3.get_sepeth("time")
-        value_2 = ep_3.get_sepeth("space")
-        value_3 = ep_3.get_sepeth("mirage")
+        value = ep_3.get_sepith("time")
+        value_2 = ep_3.get_sepith("space")
+        value_3 = ep_3.get_sepith("mirage")
         self.assertEqual(value, 2)
         self.assertEqual(value_2, 2)
         self.assertEqual(value_3, 5)
