@@ -55,7 +55,7 @@ soul_blur = Skill(name="Soul Blur", mirage=1, description="Emits a time-space sh
 clock_up = Skill(name="Clock Up", description="Speeds up the flow fo time. [SPD+25%]")
 clock_up_ex = Skill(name="Clock Up EX", time=9, description="Greatly speeds up the flow of time. [SPD+50%]")
 anti_sept = Skill(name="Anti-Sept", time=3, description="Temporarily prevents the casting of arts. [Mute]")
-Anti_sept_all = Skill(name="Anti-Sept All", time=11, description="Temporarily prevents the casting of arts. [Mute]")
+anti_sept_all = Skill(name="Anti-Sept All", time=11, description="Temporarily prevents the casting of arts. [Mute]")
 
 # Mirage Skills
 saint = Skill(name="Saint", mirage=4, earth=3, fire=3, water=2, green=2, space=2, description="Temporarily increases an ally's parameters. [STR&DEF+25%]")
