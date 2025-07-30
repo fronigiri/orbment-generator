@@ -39,6 +39,26 @@ volcanic_rave = Skill(name="Volcanic Rave", fire=8, earth=4, space=2, descriptio
 forte = Skill(name="Forte", fire=4, wind=3, space=2, mirage=1, description="Temporarily boosts strength by fire. [STR+25%]")
 
 #Wind Skills
+air_strike = Skill(name="Air Strike", wind=1, description="Tears and shreds an enemy with compressed air.")
+aerial = Skill(name="Aerial", wind=4, description="A powerful tornado with whirling bits of rubble.")
+aero_storm = Skill(name="Aero Storm", wind=8, description="Creates a massive vortex of slicing aero blades.")
+lightning = Skill(name="Sends out an electrical shock. [Seal 20%]")
+plasma_wave = Skill(name="Plasma Wave", wind=8, space=4, description="Strikes with electrical bolts. [Seal 20%]")
+sylphen_guard = Skill(name="Sylphen Guard", wind=2, description="Creates a temporary wind barrier.[AGL+50%]")
+sylphen_wing = Skill(name="Sylphen Wing", wind=6, description="Temporarily borrows the power of wind. [MOV+1]")
 
+#Time Skills
+shadow_spear = Skill(name="Shadow Spear", time=5, description="A blade that whittles away life. [K.O. 20%]")
+hell_gate = Skill(name="Hell Gate", time=4, space=2, mirage=1, description="Stagnates enemies' vital activities. [Faint 20%]")
+white_gehenna = Skill(name="White Gehenna", time=8, space=4, mirage=2, description="Disrupts the time-space continuum. [Faint 20%]")
+soul_blur = Skill(name="Soul Blur", mirage=1, description="Emits a time-space shaking pulse. [Faint 20%]")
+clock_up = Skill(name="Clock Up", description="Speeds up the flow fo time. [SPD+25%]")
+clock_up_ex = Skill(name="Clock Up EX", time=9, description="Greatly speeds up the flow of time. [SPD+50%]")
+anti_sept = Skill(name="Anti-Sept", time=3, description="Temporarily prevents the casting of arts. [Mute]")
+Anti_sept_all = Skill(name="Anti-Sept All", time=11, description="Temporarily prevents the casting of arts. [Mute]")
+
+# Mirage Skills
+saint = Skill(name="Saint", mirage=4, earth=3, fire=3, water=2, green=2, space=2, description="Temporarily increases an ally's parameters. [STR&DEF+25%]")
+chaos_brand = Skill(name="Chaos Brand", mirage=5, description="Muddles an enemy's cognitive abilities. [Confuse]")
 
 
