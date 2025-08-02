@@ -66,5 +66,3 @@ valid_skills = [stone_hammer, earth_lance, petrify_breath,stone_impact, titanic_
                  fire_bolt, flame_arrow, napalm_breath, fire_bolt_ex, spiral_flare, volcanic_rave, forte, air_strike, 
                  aerial, aero_storm, lightning, plasma_wave, sylphen_guard, sylphen_wing, shadow_spear, hell_gate, 
                  white_gehenna, soul_blur, clock_up, clock_up_ex, anti_sept, anti_sept_all, saint, chaos_brand]
-
-
