@@ -6,6 +6,11 @@ class Skill(Quartz):
                  time=None, space=None, mirage=None, description=None):
         super().__init__(name, earth, water, fire, wind, time, space, mirage)
         self.description = description
+
+
+def get_skills(lines, skill_list):
+    pass
+
 # Earth Skills
 stone_hammer = Skill(name="Stone Hammer", earth=1, description="Drops a large boulder on enemies.")
 earth_lance = Skill(name="Earth Lance", earth=5, description="A pointed blade shoots up from the ground.")
@@ -61,7 +66,7 @@ anti_sept_all = Skill(name="Anti-Sept All", time=11, description="Temporarily pr
 saint = Skill(name="Saint", mirage=4, earth=3, fire=3, water=2, green=2, space=2, description="Temporarily increases an ally's parameters. [STR&DEF+25%]")
 chaos_brand = Skill(name="Chaos Brand", mirage=5, description="Muddles an enemy's cognitive abilities. [Confuse]")
 
-valid_skills = [stone_hammer, earth_lance, petrify_breath,stone_impact, titanic_roar, earth_guard, earth_wall, crest,
+skill_list = [stone_hammer, earth_lance, petrify_breath,stone_impact, titanic_roar, earth_guard, earth_wall, crest,
                 aqua_bleed, blue_impact, diamond_dust, tear, teara, tearal, la_tear, la_teara, thelas, curia, la_curia,
                  fire_bolt, flame_arrow, napalm_breath, fire_bolt_ex, spiral_flare, volcanic_rave, forte, air_strike, 
                  aerial, aero_storm, lightning, plasma_wave, sylphen_guard, sylphen_wing, shadow_spear, hell_gate, 

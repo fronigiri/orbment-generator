@@ -1,11 +1,56 @@
 class Character:
     quartz = []
-
+    
     def __init__(self, name=None, lines=None, restricted_slots=None, element=None):
         self.name = name
         self.lines = lines
         self.restrcited_slots = restricted_slots
         self.element = element
+    
+    def make_lines(self):
+        if self.name == "Olivier" or self.name == "Kloe":
+            return self.quartz
+        
+        lines = []
+
+        if self.name == "Estelle":
+            lines.append((self.quartz[0], self.quartz[1], self.quartz[2], self.quartz[3]))
+            lines.append((self.quartz[0], self.quartz[4], self.quartz[5]))
+            return lines
+        elif self.name == "Joshua":
+            lines.append((self.quartz[0], self.quartz[1], self.quartz[2], self.quartz[3], self.quartz[4]))
+            lines.append((self.quartz[0], self.quartz[6]))
+            return lines
+        elif self.name == "Scherazard":
+            lines.append((self.quartz[0], self.quartz[1]))
+            lines.append((self.quartz[0], self.quartz[2], self.quartz[3], self.quartz[4], self.quartz[5]))
+            return lines
+        elif self.name == "Tita":
+            lines.append((self.quartz[0], self.quartz[1]))
+            lines.append((self.quartz[0], self.quartz[2], self.quartz[3], self.quartz[4]))
+            lines.append((self.quartz[0], self.quartz[5]))
+            return lines
+        elif self.name == "Agate":
+            lines.append((self.quartz[0], self.quartz[1], self.quartz[2]))
+            lines.append((self.quartz[0], self.quartz[3]))
+            lines.append((self.quartz[0], self.quartz[4], self.quartz[5]))
+            return lines
+        elif self.name == "Zin":
+            lines.append((self.quartz[0], self.quartz[1], self.quartz[2]))
+            lines.append((self.quartz[0], self.quartz[3]))
+            lines.append((self.quartz[0], self.quartz[4]))
+            lines.append((self.quartz[0], self.quartz[5]))
+            return lines
+        
+
+            
+
+
+            
+
+
+
+
 
 
 joshua = Character("Joshua", 2, (1,4), "time")
