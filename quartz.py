@@ -1,7 +1,7 @@
 class Quartz:
-    def __init__(self=None, name=None, earth=None, 
-                 water=None, fire=None, wind=None, 
-                 time=None, space=None, mirage=None):
+    def __init__(self, name=0, earth=0, 
+                 water=0, fire=0, wind=0, 
+                 time=0, space=0, mirage=0):
         self.name = name
         self.earth = earth
         self.water = water
@@ -26,6 +26,27 @@ class Quartz:
             return self.space
         elif element == 'mirage':
             return self.mirage
+
+def line_total(line):
+    total = {
+        "fire": 0,
+        "wind": 0,
+        "time": 0,
+        "water": 0,
+        "mirage": 0,
+        "space": 0,
+        "earth": 0
+    }
+    for quartz in line:
+        total["fire"] += quartz.get_sepith("fire")
+        total["wind"] += quartz.get_sepith("wind")
+        total["earth"] += quartz.get_sepith("earth")
+        total["water"] += quartz.get_sepith("water")
+        total["mirage"] += quartz.get_sepith("mirage")
+        total["space"] += quartz.get_sepith("space")
+        total["time"] += quartz.get_sepith("time")
+    return total
+
 
 
 #Earth Quartz

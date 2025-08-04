@@ -1,17 +1,36 @@
-from quartz import Quartz
+from quartz import Quartz, line_total
 
 class Skill(Quartz):
-    def __init__(self=None, name=None, earth=None, 
-                 water=None, fire=None, wind=None, 
-                 time=None, space=None, mirage=None, description=None):
+    def __init__(self, name=None, earth=0, 
+                 water=0, fire=0, wind=0, 
+                 time=0, space=0, mirage=0, description=None):
         super().__init__(name, earth, water, fire, wind, time, space, mirage)
         self.description = description
+    
+    def __eq__(self, other):
+        if isinstance(other, Skill):
+            return self.name == other.name
+        return False
 
 
-def get_skills(lines, skill_list):
-    pass
-
-
+def get_skills(character, skill_list):
+    skills_found = []
+    lines = character.lines
+    for line in lines:
+        total = line_total(line)
+    for skill in skill_list:
+        if (skill.get_sepith("earth") < total["earth"] or
+            skill.get_sepith("water") < total["water"] or
+            skill.get_sepith("fire") < total["fire"] or
+            skill.get_sepith("wind") < total["wind"] or
+            skill.get_sepith("time") < total["time"] or
+            skill.get_sepith("space") < total["space"] or
+            skill.get_sepith("mirage") < total["mirage"]):
+            continue
+        if (skill in skills_found):
+            continue
+        skills_found.push(skill)
+    return skills_found
 
 # Earth Skills
 stone_hammer = Skill(name="Stone Hammer", earth=1, description="Drops a large boulder on enemies.")
@@ -65,7 +84,7 @@ anti_sept = Skill(name="Anti-Sept", time=3, description="Temporarily prevents th
 anti_sept_all = Skill(name="Anti-Sept All", time=11, description="Temporarily prevents the casting of arts. [Mute]")
 
 # Mirage Skills
-saint = Skill(name="Saint", mirage=4, earth=3, fire=3, water=2, green=2, space=2, description="Temporarily increases an ally's parameters. [STR&DEF+25%]")
+saint = Skill(name="Saint", mirage=4, earth=3, fire=3, water=2, wind=2, space=2, description="Temporarily increases an ally's parameters. [STR&DEF+25%]")
 chaos_brand = Skill(name="Chaos Brand", mirage=5, description="Muddles an enemy's cognitive abilities. [Confuse]")
 
 skill_list = [stone_hammer, earth_lance, petrify_breath,stone_impact, titanic_roar, earth_guard, earth_wall, crest,
