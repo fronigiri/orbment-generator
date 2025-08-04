@@ -11,6 +11,8 @@ class Skill(Quartz):
 def get_skills(lines, skill_list):
     pass
 
+
+
 # Earth Skills
 stone_hammer = Skill(name="Stone Hammer", earth=1, description="Drops a large boulder on enemies.")
 earth_lance = Skill(name="Earth Lance", earth=5, description="A pointed blade shoots up from the ground.")

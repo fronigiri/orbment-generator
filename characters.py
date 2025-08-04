@@ -1,46 +1,75 @@
+from quartz import Quartz
+
 class Character:
     quartz = []
-    
-    def __init__(self, name=None, lines=None, restricted_slots=None, element=None):
+    lines = []
+    def __init__(self, name=None, line_number=None, restricted_slots=None, element=None):
         self.name = name
-        self.lines = lines
+        self.line_number = line_number
         self.restrcited_slots = restricted_slots
         self.element = element
+
+    def line_total(self, line):
+        total = {
+            "fire": 0,
+            "wind": 0,
+            "time": 0,
+            "water": 0,
+            "mirage": 0,
+            "space": 0,
+            "earth": 0
+        }
+        for quartz in line:
+            total["fire"] += quartz.get_sepeth("fire")
+            total["wind"] += quartz.get_sepeth("wind")
+            total["earth"] += quartz.get_sepeth("earth")
+            total["water"] += quartz.get_sepeth("water")
+            total["mirage"] += quartz.get_sepeth("mirage")
+            total["space"] += quartz.get_sepeth("space")
+            total["time"] += quartz.get_sepeth("time")
+        return total
+
+
+
     
     def make_lines(self):
         if self.name == "Olivier" or self.name == "Kloe":
-            return self.quartz
-        
-        lines = []
+            self.lines.append((self.quartz[0], self.quartz[1], self.quartz[3], self.quartz[4],self.quartz[5]))
+            return
 
         if self.name == "Estelle":
-            lines.append((self.quartz[0], self.quartz[1], self.quartz[2], self.quartz[3]))
-            lines.append((self.quartz[0], self.quartz[4], self.quartz[5]))
-            return lines
+            self.lines.append((self.quartz[0], self.quartz[1], self.quartz[2], self.quartz[3]))
+            self.lines.append((self.quartz[0], self.quartz[4], self.quartz[5]))
+            return
+        
         elif self.name == "Joshua":
-            lines.append((self.quartz[0], self.quartz[1], self.quartz[2], self.quartz[3], self.quartz[4]))
-            lines.append((self.quartz[0], self.quartz[6]))
-            return lines
+            self.lines.append((self.quartz[0], self.quartz[1], self.quartz[2], self.quartz[3], self.quartz[4]))
+            self.lines.append((self.quartz[0], self.quartz[6]))
+            return
+        
         elif self.name == "Scherazard":
-            lines.append((self.quartz[0], self.quartz[1]))
-            lines.append((self.quartz[0], self.quartz[2], self.quartz[3], self.quartz[4], self.quartz[5]))
-            return lines
+            self.lines.append((self.quartz[0], self.quartz[1]))
+            self.lines.append((self.quartz[0], self.quartz[2], self.quartz[3], self.quartz[4], self.quartz[5]))
+            return
+        
         elif self.name == "Tita":
-            lines.append((self.quartz[0], self.quartz[1]))
-            lines.append((self.quartz[0], self.quartz[2], self.quartz[3], self.quartz[4]))
-            lines.append((self.quartz[0], self.quartz[5]))
-            return lines
+            self.lines.append((self.quartz[0], self.quartz[1]))
+            self.lines.append((self.quartz[0], self.quartz[2], self.quartz[3], self.quartz[4]))
+            self.lines.append((self.quartz[0], self.quartz[5]))
+            return
+        
         elif self.name == "Agate":
-            lines.append((self.quartz[0], self.quartz[1], self.quartz[2]))
-            lines.append((self.quartz[0], self.quartz[3]))
-            lines.append((self.quartz[0], self.quartz[4], self.quartz[5]))
-            return lines
+            self.lines.append((self.quartz[0], self.quartz[1], self.quartz[2]))
+            self.lines.append((self.quartz[0], self.quartz[3]))
+            self.lines.append((self.quartz[0], self.quartz[4], self.quartz[5]))
+            return
+        
         elif self.name == "Zin":
-            lines.append((self.quartz[0], self.quartz[1], self.quartz[2]))
-            lines.append((self.quartz[0], self.quartz[3]))
-            lines.append((self.quartz[0], self.quartz[4]))
-            lines.append((self.quartz[0], self.quartz[5]))
-            return lines
+            self.lines.append((self.quartz[0], self.quartz[1], self.quartz[2]))
+            self.lines.append((self.quartz[0], self.quartz[3]))
+            self.lines.append((self.quartz[0], self.quartz[4]))
+            self.lines.append((self.quartz[0], self.quartz[5]))
+            return
         
 
             
