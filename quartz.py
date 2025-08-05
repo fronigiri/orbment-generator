@@ -48,7 +48,6 @@ def line_total(line):
     return total
 
 
-
 #Earth Quartz
 def_1 = Quartz("Defense 1", earth=1)
 def_2 = Quartz("Defense 2", earth=3)
