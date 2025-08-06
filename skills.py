@@ -18,19 +18,22 @@ def get_skills(character, skill_list):
     lines = character.lines
     for line in lines:
         total = line_total(line)
-    for skill in skill_list:
-        if (skill.get_sepith("earth") < total["earth"] or
-            skill.get_sepith("water") < total["water"] or
-            skill.get_sepith("fire") < total["fire"] or
-            skill.get_sepith("wind") < total["wind"] or
-            skill.get_sepith("time") < total["time"] or
-            skill.get_sepith("space") < total["space"] or
-            skill.get_sepith("mirage") < total["mirage"]):
-            continue
-        if (skill in skills_found):
-            continue
-        skills_found.push(skill)
+        for skill in skill_list:
+            if (skill.get_sepith("earth") > total["earth"] or
+                skill.get_sepith("water") > total["water"] or
+                skill.get_sepith("fire") > total["fire"] or
+                skill.get_sepith("wind") > total["wind"] or
+                skill.get_sepith("time") > total["time"] or
+                skill.get_sepith("space") > total["space"] or
+                skill.get_sepith("mirage") > total["mirage"]):
+                continue
+            if (skill in skills_found):
+                continue
+            skills_found.append(skill)
     return skills_found
+def print_skill_list(list):
+    for skill in list:
+        print(f"{skill.name}")
 
 # Earth Skills
 stone_hammer = Skill(name="Stone Hammer", earth=1, description="Drops a large boulder on enemies.")
@@ -68,7 +71,7 @@ forte = Skill(name="Forte", fire=4, wind=3, space=2, mirage=1, description="Temp
 air_strike = Skill(name="Air Strike", wind=1, description="Tears and shreds an enemy with compressed air.")
 aerial = Skill(name="Aerial", wind=4, description="A powerful tornado with whirling bits of rubble.")
 aero_storm = Skill(name="Aero Storm", wind=8, description="Creates a massive vortex of slicing aero blades.")
-lightning = Skill(name="Sends out an electrical shock. [Seal 20%]")
+lightning = Skill(name="Lightning", wind=4, space=2, description="Sends out an electrical shock. [Seal 20%]")
 plasma_wave = Skill(name="Plasma Wave", wind=8, space=4, description="Strikes with electrical bolts. [Seal 20%]")
 sylphen_guard = Skill(name="Sylphen Guard", wind=2, description="Creates a temporary wind barrier.[AGL+50%]")
 sylphen_wing = Skill(name="Sylphen Wing", wind=6, description="Temporarily borrows the power of wind. [MOV+1]")

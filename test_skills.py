@@ -1,5 +1,7 @@
 import unittest
-from skills import Skill
+from skills import Skill, get_skills, skill_list, print_skill_list
+from quartz import *
+from characters import characters
 
 
 class TestSkill(unittest.TestCase):
@@ -17,8 +19,18 @@ class TestSkill(unittest.TestCase):
         self.assertEqual(skill_1, skill_2)
         self.assertEqual(skill_1, skill_2)
         self.assertNotEqual(skill_3, skill_1)
-    
-    
+
+    def test_get_skills(self):
+        test_char = characters["olivier"]
+        line = [(ep_1, cast_1, attack_1, action_1, hp_2, sleep)]
+        test_char.lines = line
+        list = get_skills(test_char, skill_list)
+        print_skill_list(list)
+        
+
+
+
+
 
 if __name__ == "__main__":
     unittest.main()
