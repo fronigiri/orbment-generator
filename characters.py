@@ -50,14 +50,14 @@ class Character:
             return
                    
 
-joshua = Character("Joshua", 2, (1,4), "time")
+joshua = Character("Joshua", 2, (1,4), "Time")
 zin = Character("Zin", 4, (1), "earth")
-kloe = Character("Kloe", 1, (1, 2, 4), "water")
-agate = Character("Agate", 3, (1, 6), "fire")
-tita = Character("Tita", 3, (1, 6), "space")
+kloe = Character("Kloe", 1, (1, 2, 4), "Water")
+agate = Character("Agate", 3, (1, 6), "Fire")
+tita = Character("Tita", 3, (1, 6), "Space")
 olivier = Character("Olivier", 1, None, None)
 estelle = Character("Estelle", 2, None, None)
-scherazard = Character("Scherazard", 2, (1, 5), "wind")
+scherazard = Character("Scherazard", 2, (1, 5), "Wind")
 
 characters = {}
 characters["joshua"] = joshua

@@ -26,7 +26,23 @@ def main():
 
 
 def slot_quartz(character):
-    pass
+    for i in range(0, 5):
+        if i + 1 in character.restricted_slots:
+            input = input(f"Slot {i + 1} is a {character.element} slot. Please provide a valid quartz:")
+            try:
+                quartz = quartz_list[quartz]
+            except Exception as e:
+                print(f"An unexpected error occurred: {e}")
+            
+        
+            
+
+            
+
+
+            
+
+        
 
 
 def character_selector(input):
