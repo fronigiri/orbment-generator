@@ -21,29 +21,17 @@ def main():
     character = character_selector(character_input)
     slot_quartz(character)
     print("All quartz sloted!")
+    character.make_lines()
     print("Generating skill list...")
     skills = get_skills(character, skill_list)
     print_skill_list(skills)
-    print("Skill list generated!")
 
 
 
 def slot_quartz(character):
-    for i in range(0, 5):
-        if i + 1 in character.restricted_slots:
-            name = input(f"Slot {i + 1} is a {character.element} slot. Please provide a valid quartz:")
-            name_lower = name.lower()
-            if name_lower not in quartz_list:
-                raise Exception("Invalid quartz provided.")
-            
-            quartz = quartz_list[name_lower]
-
-            if quartz.element != character.element:
-                raise Exception("Incorrect element provided.")
-            if quartz in character.quartz:
-                raise Exception("The provided quartz is already sloted")
-            character.quartz.append(quartz)
-        else:
+    types_sloted = []
+    for i in range(0, 6):
+        if character.restricted_slots is None or i + 1 not in character.restricted_slots:
             name = input(f"Please provide quartz for slot {i + 1}:")
             name_lower = name.lower()
             if name_lower not in quartz_list:
@@ -52,7 +40,34 @@ def slot_quartz(character):
             quartz = quartz_list[name_lower]           
             if quartz in character.quartz:
                 raise Exception("The provided quartz is already sloted")
-            character.quartz.append(quartz)            
+            
+            if quartz.type in types_sloted:
+                raise Exception("Unable to use the same type of quartz")
+            
+            character.quartz.append(quartz)
+            if quartz.type is not None:
+                types_sloted.append(quartz.type)   
+        else:
+            name = input(f"Slot {i + 1} is a {character.element} slot. Please provide a valid quartz:")
+            name_lower = name.lower()
+            if name_lower not in quartz_list:
+                raise Exception("Invalid quartz provided.")
+            
+            quartz = quartz_list[name_lower]
+
+            if quartz.element != character.element.lower():
+                raise Exception("Incorrect element provided.")
+            
+            if quartz in character.quartz:
+                raise Exception("The provided quartz is already sloted")
+            
+            if quartz.type in types_sloted:
+                raise Exception("Unable to use the same type of quartz")
+            
+            character.quartz.append(quartz)
+            if quartz.type is not None:
+                types_sloted.append(quartz.type)             
+         
 
 
 def character_selector(number):

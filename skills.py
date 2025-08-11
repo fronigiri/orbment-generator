@@ -32,8 +32,10 @@ def get_skills(character, skill_list):
             skills_found.append(skill)
     return skills_found
 def print_skill_list(list):
+    print("==========Skill List==========")
     for skill in list:
         print(f"{skill.name}")
+    print("==============================")
 
 # Earth Skills
 stone_hammer = Skill(name="Stone Hammer", earth=1, description="Drops a large boulder on enemies.")

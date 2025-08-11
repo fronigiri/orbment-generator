@@ -6,13 +6,13 @@ class Character:
     def __init__(self, name=None, line_number=1, restricted_slots=None, element=None):
         self.name = name
         self.line_number = line_number
-        self.restrcited_slots = restricted_slots
+        self.restricted_slots = restricted_slots
         self.element = element
 
 
     def make_lines(self):
         if self.name == "Olivier" or self.name == "Kloe":
-            self.lines.append((self.quartz[0], self.quartz[1], self.quartz[3], self.quartz[4],self.quartz[5]))
+            self.lines.append((self.quartz[0], self.quartz[1], self.quartz[2], self.quartz[3], self.quartz[4], self.quartz[5]))
             return
 
         if self.name == "Estelle":
@@ -22,7 +22,7 @@ class Character:
         
         elif self.name == "Joshua":
             self.lines.append((self.quartz[0], self.quartz[1], self.quartz[2], self.quartz[3], self.quartz[4]))
-            self.lines.append((self.quartz[0], self.quartz[6]))
+            self.lines.append((self.quartz[0], self.quartz[5]))
             return
         
         elif self.name == "Scherazard":
