@@ -1,6 +1,6 @@
 from quartz import quartz_list
 from characters import characters
-from skills import skill_list
+from skills import skill_list, get_skills, print_skill_list
 import os
 
 
@@ -18,31 +18,42 @@ def main():
     print("[6] Olivier")
     print("[7] Tita")
     print("[8] Zin")
-    character_input = input("Please enter a number to select a character: ")
+    character_input = input("Please enter a number to select a character:")
     character = character_selector(character_input)
-
-
+    slot_quartz(character)
+    print("All quartz sloted!")
+    print("Generating skill list...")
+    skills = get_skills(character, skill_list)
+    print_skill_list(skills)
+    print("Skill list generated!")
 
 
 
 def slot_quartz(character):
     for i in range(0, 5):
         if i + 1 in character.restricted_slots:
-            input = input(f"Slot {i + 1} is a {character.element} slot. Please provide a valid quartz:")
-            try:
-                quartz = quartz_list[quartz]
-            except Exception as e:
-                print(f"An unexpected error occurred: {e}")
+            name = input(f"Slot {i + 1} is a {character.element} slot. Please provide a valid quartz:")
+            name_lower = name.lower()
+            if name_lower not in quartz_list:
+                raise Exception("Invalid quartz provided.")
             
-        
+            quartz = quartz_list[name_lower]
+
+            if quartz.element != character.element:
+                raise Exception("Incorrect element provided.")
+            if quartz in character.quartz:
+                raise Exception("The provided quartz is already sloted")
+            character.quartz.append(quartz)
+        else:
+            name = input(f"Please provide quartz for slot {i + 1}:")
+            name_lower = name.lower()
+            if name_lower not in quartz_list:
+                raise Exception("Invalid quartz provided.")
             
-
-            
-
-
-            
-
-        
+            quartz = quartz_list[name_lower]           
+            if quartz in character.quartz:
+                raise Exception("The provided quartz is already sloted")
+            character.quartz.append(quartz)            
 
 
 def character_selector(input):
@@ -54,7 +65,7 @@ def character_selector(input):
         print(f"Selected {characters["estelle"].name}")
         return characters["estelle"]
     
-    elif input == 3:
+    if input == 3:
         print(f"Selected {characters["scherazard"].name}")
         return characters["scherazard"]
     
@@ -77,15 +88,9 @@ def character_selector(input):
     if input == 8:
         print(f"Selected {characters["zin"].name}")
         return characters["zin"]
-    
-    
+
     raise Exception("Error: Please provide a valid number")
     
-    
-
-
-
-
 
 
 if __name__ == "__main__":
