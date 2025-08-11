@@ -59,7 +59,7 @@ def line_total(line):
 def_1 = Quartz("Defense 1", earth=1, type="def", element="earth")
 def_2 = Quartz("Defense 2", earth=3, type="def", element="earth")
 def_3 = Quartz("Defense 3", earth=5, type="def", element="earth")
-poison = Quartz("Poison", earth=5, element="earth")
+poison = Quartz("Poison", earth=5, type="status", element="earth")
 mute = Quartz("Mute", earth=3, element="earth")
 petrify = Quartz("Petrify", earth=3, element="earth")
 
@@ -70,16 +70,16 @@ hp_3 = Quartz("HP 3", water=5, type="hp", element="water")
 mind_1 = Quartz("Mind 1", water=1, type="mind", element="water")
 mind_2 = Quartz("Mind 2", water=3, type="mind", element="water")
 mind_3 = Quartz("Mind 3", water=5, type="mind", element="water")
-freeze = Quartz("Freeze", water=3, element="water")
+freeze = Quartz("Freeze", water=3, type="status", element="water")
 heal = Quartz("Heal", water=3, time=2, element="water")
 
 #Fire Quartz
 attack_1 = Quartz("Attack 1", fire=1, type="attack", element="fire")
 attack_2 = Quartz("Attack 2", fire=3, type="attack", element="fire")
 attack_3 = Quartz("Attack 3", fire=5, type="attack", element="fire")
-seal = Quartz("Seal", fire=3, element="fire")
-confuse = Quartz("Confuse", fire=3, element="fire")
-strike = Quartz("Strike", fire=3, element="fire")
+seal = Quartz("Seal", fire=3, type="status", element="fire")
+confuse = Quartz("Confuse", fire=3, type="status", element="fire")
+strike = Quartz("Strike", fire=3, type="status", element="fire")
 
 #Wind Quartz
 shield_1 = Quartz("Shield 1", wind=1, type="shield", element="wind")
@@ -91,8 +91,8 @@ evade_3 = Quartz("Evade 3", wind=5, type="evade", element="wind")
 impede_1 = Quartz("Impede 1", wind=1, type="impede", element="wind")
 impede_2 = Quartz("Impede 2", wind=3, type="impede", element="wind")
 impede_3 = Quartz("Impede 3", wind=5, type="impede", element="wind")
-sleep = Quartz("Sleep", wind=3, element="wind")
-scent = Quartz("Scent", wind=3, space=2, element="wind")
+sleep = Quartz("Sleep", wind=3, type="status", element="wind")
+scent = Quartz("Scent", wind=3, space=2, type="status", element="wind")
 
 #Time Quartz
 action_1 = Quartz("Action 1", time=1, type="action", element="time")
@@ -101,8 +101,8 @@ action_3 = Quartz("Action 3", time=5, type="action", element="time")
 blind = Quartz("Blind", time=3, element="time")
 cast_1 = Quartz("Cast 1", time=1, type="cast", element="time")
 cast_2 = Quartz("Cast 2", time=3, type="cast", element="time")
-deathblow = Quartz("Deathblow 1", time=3, type="deathblow", element="time")
-deathblow_2 = Quartz("Deathblow 2", type="deathblow", element="time")
+deathblow = Quartz("Deathblow 1", time=3, type="status", element="time")
+deathblow_2 = Quartz("Deathblow 2",type="status", element="time")
 
 #Space Quartz
 move_1 = Quartz("Move 1", space=1, type="move", element="space")

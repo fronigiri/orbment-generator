@@ -1,7 +1,6 @@
 from quartz import quartz_list
 from characters import characters
 from skills import skill_list, get_skills, print_skill_list
-import os
 
 
 
@@ -56,40 +55,27 @@ def slot_quartz(character):
             character.quartz.append(quartz)            
 
 
-def character_selector(input):
-    if input == 1:
-        print(f"Selected {characters["joshua"].name}")
-        return characters["joshua"]
-
-    if input == 2:
-        print(f"Selected {characters["estelle"].name}")
-        return characters["estelle"]
-    
-    if input == 3:
-        print(f"Selected {characters["scherazard"].name}")
-        return characters["scherazard"]
-    
-    if input == 4:
-        print(f"Selected {characters["agate"].name}")
-        return characters["agate"]
-    
-    if input == 5:
-        print(f"Selected {characters["kloe"].name}")
-        return characters["kloe"]
-    
-    if input == 6:
-        print(f"Selected {characters["olivier"].name}")
-        return characters["olivier"]
-    
-    if input == 7:
-        print(f"Selected {characters["tita"].name}")
-        return characters["tita"]
-    
-    if input == 8:
-        print(f"Selected {characters["zin"].name}")
-        return characters["zin"]
-
-    raise Exception("Error: Please provide a valid number")
+def character_selector(number):
+    try:
+        num_key = int(number)
+    except ValueError:
+        raise Exception("Error: Input is not a valid integer")
+    char_map = {
+        1: "joshua",
+        2: "estelle",
+        3: "scherazard",
+        4: "agate",
+        5: "kloe",
+        6: "olivier",
+        7: "tita",
+        8: "zin",
+    }
+    if num_key in char_map:
+        selected_char_key = char_map[num_key]
+        print(f"Selected {characters[selected_char_key].name}")
+        return characters[selected_char_key]
+    else:
+        raise Exception("Error: Please provide a valid number")
     
 
 
